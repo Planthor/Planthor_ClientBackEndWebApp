@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:16802",
-      "sslPort": 44324
+      "applicationUrl": "http://localhost:10769",
+      "sslPort": 44327
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Planthor_ClientBackEndWebApp": {
+    "PlanthorWebApiServer": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

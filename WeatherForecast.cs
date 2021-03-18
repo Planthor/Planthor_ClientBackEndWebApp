@@ -1,6 +1,6 @@
 using System;
 
-namespace Planthor_ClientBackEndWebApp
+namespace PlanthorWebApiServer
 {
     public class WeatherForecast
     {
