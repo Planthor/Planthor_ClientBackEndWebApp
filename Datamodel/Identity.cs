@@ -12,8 +12,6 @@ namespace Planthor_ClientBackEndWebApp.Datamodel
 
         public Guid AccountId { get; set; }
         public Account Account { get; set; 
-        
-        
         }
     }
 }

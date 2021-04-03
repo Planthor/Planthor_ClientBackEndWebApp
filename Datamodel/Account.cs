@@ -10,7 +10,7 @@ namespace Planthor_ClientBackEndWebApp.Datamodel
         public char AccountGender { get; set; }
         public Uri AccountAvatar { get; set; }
 
-        public Member Memeber { get; set; }
+        public Member Member { get; set; }
 
         public Goal Goal { get; set; }
 
