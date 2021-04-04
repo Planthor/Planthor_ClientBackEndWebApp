@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Planthor_ClientBackEndWebApp.Datamodel
 {
@@ -10,6 +11,6 @@ namespace Planthor_ClientBackEndWebApp.Datamodel
         public int TribeNoOfMemebers { get; set; }
         public Uri TribeAvatar { get; set;}
 
-        public Member Member { get; set; }
+        public ICollection<Member> Members { get; set; }
     }
 }

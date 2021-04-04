@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Planthor_ClientBackEndWebApp.Datamodel
 {
@@ -10,10 +11,12 @@ namespace Planthor_ClientBackEndWebApp.Datamodel
         public char AccountGender { get; set; }
         public Uri AccountAvatar { get; set; }
 
-        public Member Member { get; set; }
+        #nullable enable
+        public Member? Member { get; set; }
 
-        public Goal Goal { get; set; }
+        public ICollection<Goal>? Goals { get; set; }
+        #nullable disable
 
-        public Identity Identity { get; set; }
+        public ICollection<Identity> Identity { get; set; }
     }
 }
