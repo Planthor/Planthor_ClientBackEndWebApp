@@ -1,9 +1,10 @@
 using System;
 
-namespace Planthor_ClientBackEndWebApp.Datamodel
+namespace PlanthorWebApiServer.Datamodel
 {
     public class MemberGoals
     {
+        public Guid MemberGoalsId { get; set; }
         public Guid MemberId { get; set; }
         public Member Member { get; set; }
 
