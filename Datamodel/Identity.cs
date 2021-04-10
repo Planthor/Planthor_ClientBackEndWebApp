@@ -1,6 +1,6 @@
 using System;
 
-namespace Planthor_ClientBackEndWebApp.Datamodel
+namespace PlanthorWebApiServer.Datamodel
 {
     public class Identity
     {

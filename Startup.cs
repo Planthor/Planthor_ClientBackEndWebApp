@@ -12,7 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Planthor_ClientBackEndWebApp.Datamodel;
+using PlanthorWebApiServer.Context;
+using PlanthorWebApiServer.Datamodel;
 
 namespace PlanthorWebApiServer
 {
@@ -39,7 +40,7 @@ namespace PlanthorWebApiServer
             .AddJsonFile("appsettings.json")
             .Build();
 
-            services.AddDbContext<PlanthorContext>(options => options.UseNpgsql(configuration.GetConnectionString("MainPlanthorPostgresql")));
+            services.AddDbContext<PlanthorDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("MainPlanthorPostgresql")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
