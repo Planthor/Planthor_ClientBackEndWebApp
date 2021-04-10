@@ -5,6 +5,7 @@ namespace Planthor_ClientBackEndWebApp.Datamodel
 {
     public class Tribe : BaseEntity
     {
+        //TribeId: primary key
         public Guid TribeId { get; set; }
         public string TribeName { get; set; }
         public string TribeDescription { get; set; }
