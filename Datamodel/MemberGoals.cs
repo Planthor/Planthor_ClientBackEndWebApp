@@ -4,6 +4,7 @@ namespace Planthor_ClientBackEndWebApp.Datamodel
 {
     public class MemberGoals
     {
+        public Guid MemberGoalsId { get; set; }
         public Guid MemberId { get; set; }
         public Member Member { get; set; }
 
