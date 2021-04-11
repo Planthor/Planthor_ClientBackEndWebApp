@@ -24,7 +24,7 @@ To be updated...
 
 ### Prerequiste
 
-- Visual Studio Code (recommendation)
+- Visual Studio Code (recommended)
 - .Net Core SDK (v5.0)
 - PostgreSQL v13.2
 
