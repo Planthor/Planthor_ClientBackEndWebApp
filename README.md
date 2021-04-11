@@ -19,7 +19,11 @@ To be updated...
 - NLog
 - xUnit, moq, FluentAssertions
 ```
+## Coding standards and Naming convetions
 
+Please carefully read the pre-defined coding standards and naming conventions then apply them while development.
+
+[Planthor Coding Standards and Naming Conventions](Planthor%20Coding%20Standards%20and%20Naming%20Convetions.md)
 ## Project setup
 
 ### Prerequiste
