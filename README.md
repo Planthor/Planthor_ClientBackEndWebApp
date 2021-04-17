@@ -46,6 +46,7 @@ dotnet tool install --global dotnet-ef
 ### Database creation
 
 - After restoring the pre-defined packages and installig EF Core successfully, please try to build the project using the following command:
+
 ```
 dotnet build
 ```
@@ -60,5 +61,11 @@ dotnet ef database update
 ### How to run
 
 - Open the solution in Visual Studio Code
-- Execute ```dotnet run``` 
+- Execute ```dotnet run -p src/PlanthorWebApiServer.csproj``` 
 - Access to the adress provided in the command line
+
+To Test the project
+```
+dotnet test
+```
+
