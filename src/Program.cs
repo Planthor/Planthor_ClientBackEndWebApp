@@ -17,12 +17,12 @@ namespace PlanthorWebApiServer
             var logger = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
             try
             {
-                logger.Debug("Init PlanthorClientBackendWebapp");
+                logger.Info("Init PlanthorClientBackendWebapp");
                 CreateHostBuilder(args).Build().Run();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Error(ex, "Error while initing PlanthorClientWebapp");
+                logger.Error(ex, "Error while initializing PlanthorClientWebapp");
                 throw;
             }
             finally
