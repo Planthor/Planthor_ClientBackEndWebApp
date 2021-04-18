@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PlanthorWebApiServer.Context;
 
@@ -22,6 +23,7 @@ namespace PlanthorWebApiServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -34,6 +36,10 @@ namespace PlanthorWebApiServer
             .Build();
 
             services.AddDbContext<PlanthorDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("MainPlanthorPostgresql")));
+            services.AddLogging(config => {
+                config.AddDebug();
+                config.AddConsole();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
