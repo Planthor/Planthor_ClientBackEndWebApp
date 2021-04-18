@@ -11,14 +11,14 @@ namespace PlanthorWebApiServer.Controllers
 
         public AccountController(ILogger<AccountController> logger){
             _logger = logger;
-            _logger.LogDebug(1, "Nlog injected into AccountController");
+            _logger.LogDebug("Nlog injected into AccountController");
         }
 
         
         [HttpGet]
-        public string PostTodoItem()
+        public string TestGetMethod()
         {
-           _logger.LogDebug(2, "Testing Get method");
+           _logger.LogDebug("Testing Get method");
            return "Testing Get method";
         }
     }
