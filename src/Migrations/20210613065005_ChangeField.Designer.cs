@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PlanthorWebApiServer.Context;
@@ -9,9 +10,10 @@ using PlanthorWebApiServer.Context;
 namespace PlanthorWebApiServer.Migrations
 {
     [DbContext(typeof(PlanthorDbContext))]
-    partial class PlanthorDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210613065005_ChangeField")]
+    partial class ChangeField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

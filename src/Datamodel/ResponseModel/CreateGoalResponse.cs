@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
 
-namespace PlanthorWebApiServer.Datamodel
+namespace PlanthorWebApiServer.Datamodel.ResponseModel
 {
-    public class Goal : BaseEntity
+    public class CreateGoalResponse
     {
         public Guid GoalId { get; set; }
         public string GoalName { get; set; }
@@ -11,10 +10,5 @@ namespace PlanthorWebApiServer.Datamodel
         public float GoalCurrent { get; set; }
         public DateTime GoalDeadline { get; set; }
         public string GoalUnitMeasurement { get; set; }
-
-        public ICollection<Member> Members { get; set; }
-
-        public Guid AccountId { get; set; }
-        public Account Account { get; set; }
     }
 }
