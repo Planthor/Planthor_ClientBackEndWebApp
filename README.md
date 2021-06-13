@@ -51,12 +51,19 @@ dotnet tool install --global dotnet-ef
 dotnet build
 ```
 
-- For development purpose, run Postgre SQL (start pgAdmin) on your personal device. Then navigate to appsettings.json and replace the database credentials with your credetials and excute this command:
+- For development purpose, run Postgre SQL (start pgAdmin) on your personal device. 
+- Then navigate to appsettings.json and replace the database credentials with your credetials and excute this command:
 ```
 dotnet ef database update
 ```
 
 - Wait until the process completes, check if the database is created successfully.
+
+- In case you want to make new Updates (Migrations) to database, run command:
+```
+dotnet ef migrations add <Name of Migration Record>
+dotnet ef database update
+```
 
 ### How to run
 
