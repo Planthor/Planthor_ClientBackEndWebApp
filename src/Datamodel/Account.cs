@@ -14,11 +14,11 @@ namespace PlanthorWebApiServer.Datamodel
         public char AccountGender { get; set; }
         public Uri AccountAvatar { get; set; }
 
-#nullable enable
+        #nullable enable
         public ICollection<Member>? Member { get; set; }
 
         public ICollection<Goal>? Goals { get; set; }
-#nullable disable
+        #nullable disable
 
         public ICollection<Identity> Identity { get; set; }
     }

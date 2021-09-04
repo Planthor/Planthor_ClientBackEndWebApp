@@ -9,5 +9,6 @@ namespace PlanthorWebApiServer.Datamodel.RequestModel
         public float GoalCurrent { get; set; }
         public DateTime GoalDeadline { get; set; }
         public string GoalUnitMeasurement { get; set; }
+        public int GoalPriority { get; set;}
     }
 }
