@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PlanthorWebApiServer.Context;
@@ -9,15 +10,31 @@ using PlanthorWebApiServer.Context;
 namespace PlanthorWebApiServer.Migrations
 {
     [DbContext(typeof(PlanthorDbContext))]
-    partial class PlanthorDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210613104846_AddGoalPriority")]
+    partial class AddGoalPriority
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+            modelBuilder.Entity("GoalMember", b =>
+                {
+                    b.Property<Guid>("GoalsGoalId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("MembersMemberId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("GoalsGoalId", "MembersMemberId");
+
+                    b.HasIndex("MembersMemberId");
+
+                    b.ToTable("GoalMember");
+                });
 
             modelBuilder.Entity("PlanthorWebApiServer.Datamodel.Account", b =>
                 {
@@ -81,14 +98,9 @@ namespace PlanthorWebApiServer.Migrations
                     b.Property<DateTime>("LastUpdatedDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<Guid?>("MemberId")
-                        .HasColumnType("uuid");
-
                     b.HasKey("GoalId");
 
                     b.HasIndex("AccountId");
-
-                    b.HasIndex("MemberId");
 
                     b.ToTable("Goals");
                 });
@@ -183,6 +195,21 @@ namespace PlanthorWebApiServer.Migrations
                     b.ToTable("Tribes");
                 });
 
+            modelBuilder.Entity("GoalMember", b =>
+                {
+                    b.HasOne("PlanthorWebApiServer.Datamodel.Goal", null)
+                        .WithMany()
+                        .HasForeignKey("GoalsGoalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PlanthorWebApiServer.Datamodel.Member", null)
+                        .WithMany()
+                        .HasForeignKey("MembersMemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("PlanthorWebApiServer.Datamodel.Goal", b =>
                 {
                     b.HasOne("PlanthorWebApiServer.Datamodel.Account", "Account")
@@ -190,10 +217,6 @@ namespace PlanthorWebApiServer.Migrations
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("PlanthorWebApiServer.Datamodel.Member", null)
-                        .WithMany("Goals")
-                        .HasForeignKey("MemberId");
 
                     b.Navigation("Account");
                 });
@@ -233,11 +256,6 @@ namespace PlanthorWebApiServer.Migrations
                     b.Navigation("Identity");
 
                     b.Navigation("Member");
-                });
-
-            modelBuilder.Entity("PlanthorWebApiServer.Datamodel.Member", b =>
-                {
-                    b.Navigation("Goals");
                 });
 
             modelBuilder.Entity("PlanthorWebApiServer.Datamodel.Tribe", b =>

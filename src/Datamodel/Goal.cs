@@ -11,7 +11,7 @@ namespace PlanthorWebApiServer.Datamodel
         public float GoalCurrent { get; set; }
         public DateTime GoalDeadline { get; set; }
         public string GoalUnitMeasurement { get; set; }
-
+        public int GoalPriority {get; set; }
         public ICollection<Member> Members { get; set; }
 
         public Guid AccountId { get; set; }
