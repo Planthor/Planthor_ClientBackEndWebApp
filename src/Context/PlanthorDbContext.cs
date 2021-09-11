@@ -25,10 +25,5 @@ namespace PlanthorWebApiServer.Context
         public DbSet<Member> Members { get; set; }
         public DbSet<Tribe> Tribes { get; set; }
 
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     modelBuilder.Entity<BaseEntity>().Property(b => b.CreatedDate).HasDefaultValueSql("getdate()");
-        // }
-
     }
 }
