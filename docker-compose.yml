@@ -9,6 +9,8 @@ services:
         volumes:
             - /root/apps/db/:/var/lib/postgresql/data
         restart: always
+        ports:
+            - 5432:5432
 
     planthor_be:
         depends_on: 
