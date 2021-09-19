@@ -15,10 +15,10 @@ services:
            - database
         image: akakshuki/planthor_backend
         build: 
-            context: .
+            context: ./src/
             dockerfile: ./src/Dockerfile
         ports: 
             - "0.0.0.0:8088:80"
-        volumes: 
-           - /root/apps/planthor_app/:/wwwroot/Files/
+        # volumes: 
+        #    - /root/apps/planthor_app/:/wwwroot/Files/
         
