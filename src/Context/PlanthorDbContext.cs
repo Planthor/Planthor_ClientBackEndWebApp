@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using PlanthorWebApiServer.Datamodel;
+using PlanthorWebApiServer.Models;
 
 namespace PlanthorWebApiServer.Context
 {

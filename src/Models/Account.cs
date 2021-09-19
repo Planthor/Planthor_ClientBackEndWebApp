@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PlanthorWebApiServer.Datamodel
+namespace PlanthorWebApiServer.Models
 {
     /// <summary>
     /// Model corresponding to Account
@@ -10,15 +10,16 @@ namespace PlanthorWebApiServer.Datamodel
     {
         public Guid AccountId { get; set; }
         public string AccountEmail { get; set; }
+        public string AccountUsername { get; set; }
         public string AccountFullname { get; set; }
         public char AccountGender { get; set; }
         public Uri AccountAvatar { get; set; }
 
-        #nullable enable
+#nullable enable
         public ICollection<Member>? Member { get; set; }
 
         public ICollection<Goal>? Goals { get; set; }
-        #nullable disable
+#nullable disable
 
         public ICollection<Identity> Identity { get; set; }
     }

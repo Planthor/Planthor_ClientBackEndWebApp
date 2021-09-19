@@ -26,15 +26,12 @@ namespace PlanthorWebApiServer
 
             services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlanthorWebApiServer", Version = "v1" });
             });
-
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            .AddJsonFile("appsettings.json")
-            .Build();
+            IConfigurationRoot configuration = InitialConfigurationFiles();
 
             services.AddDbContext<PlanthorDbContext>(options =>
             {
@@ -47,6 +44,15 @@ namespace PlanthorWebApiServer
                 config.AddDebug();
                 config.AddConsole();
             });
+        }
+
+        private static IConfigurationRoot InitialConfigurationFiles()
+        {
+            return new ConfigurationBuilder()
+                        .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                        .AddJsonFile("appsettings.json")
+                        .AddJsonFile("appsettings.Development.json", optional: true)
+                        .Build();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +68,8 @@ namespace PlanthorWebApiServer
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

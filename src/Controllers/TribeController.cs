@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PlanthorWebApiServer.Context;
-using PlanthorWebApiServer.Datamodel;
+using PlanthorWebApiServer.Models;
 
 namespace PlanthorWebApiServer.Controllers
 {
@@ -34,7 +34,7 @@ namespace PlanthorWebApiServer.Controllers
                 _dbcontext.Tribes.Add(newTribeRequest);
                 _dbcontext.SaveChanges();
 
-                
+
                 return CreatedAtAction(nameof(GetTribe), new { id = newTribeRequest.TribeId }, newTribeRequest);
             }
             catch (Exception Ex)
@@ -43,7 +43,7 @@ namespace PlanthorWebApiServer.Controllers
                 return BadRequest();
             }
         }
-        
+
 
         [HttpGet("{id}")]
         public ActionResult<Tribe> GetTribe(Guid id)
@@ -99,7 +99,7 @@ namespace PlanthorWebApiServer.Controllers
         "tribeNoOfMemebers": 0,
         "tribeAvatar": "string"
         }
-        */      
+        */
         #endregion
     }
 }

@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PlanthorWebApiServer.Context;
-using PlanthorWebApiServer.Datamodel;
-using src.Datamodel.RequestModel;
+using PlanthorWebApiServer.Models;
+using PlanthorWebApiServer.Models.RequestModels;
 
 namespace PlanthorWebApiServer.Controllers
 {
-    
+
     [Route("api/[controller]")]
     [ApiController]
     public class GoalController : ControllerBase
@@ -19,18 +18,14 @@ namespace PlanthorWebApiServer.Controllers
 
         public GoalController(ILogger<GoalController> logger, PlanthorDbContext dbContext)
         {
-            _logger = logger;
-            _logger.LogDebug("Nlog injected into GoalController");
-
-            _dbcontext = dbContext;
-            _logger.LogDebug("dbContext injected into GoalController");
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _dbcontext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         // GET: api/Goals/5
         [HttpGet("{id}")]
         public ActionResult<Goal> GetGoal(Guid id)
         {
-
             try
             {
                 var goal = _dbcontext.Goals.Find(id);
@@ -104,8 +99,8 @@ namespace PlanthorWebApiServer.Controllers
             try
             {
                 _logger.LogDebug("MassUpdateGoalPriority: start");
-                IList<Goal> updatedGoals= new List<Goal>();
-                foreach(UpdateGoalRequest updateGoalPriorityRequest in updateGoalsPriorityRequest)
+                IList<Goal> updatedGoals = new List<Goal>();
+                foreach (UpdateGoalRequest updateGoalPriorityRequest in updateGoalsPriorityRequest)
                 {
                     var goal = _dbcontext.Goals.Find(updateGoalPriorityRequest.GoalId);
                     if (goal == null)
@@ -138,11 +133,8 @@ namespace PlanthorWebApiServer.Controllers
         "goalUnitMeasurement": "string",  
         "accountId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         }
-        */      
+        */
         #endregion
-
-    
-
 
     }
 }

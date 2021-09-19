@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PlanthorWebApiServer.Datamodel
+namespace PlanthorWebApiServer.Models
 {
     public class Tribe : BaseEntity
     {
@@ -11,7 +11,7 @@ namespace PlanthorWebApiServer.Datamodel
         public string TribeName { get; set; }
         public string TribeDescription { get; set; }
         public int TribeNoOfMemebers { get; set; }
-        public Uri TribeAvatar { get; set;}
+        public Uri TribeAvatar { get; set; }
 
         public ICollection<Member> Members { get; set; }
     }

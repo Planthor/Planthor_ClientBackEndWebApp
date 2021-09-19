@@ -1,6 +1,6 @@
 using System;
 
-namespace PlanthorWebApiServer.Datamodel
+namespace PlanthorWebApiServer.Models
 {
     public class BaseEntity
     {

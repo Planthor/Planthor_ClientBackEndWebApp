@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PlanthorWebApiServer.Context;
-using PlanthorWebApiServer.Datamodel;
+using PlanthorWebApiServer.Models;
 
 namespace PlanthorWebApiServer.Controllers
 {
@@ -84,7 +83,7 @@ namespace PlanthorWebApiServer.Controllers
         public ActionResult<Member> GetMyInformation()
         {
 
-             try
+            try
             {
                 //TODO: get userId from FE
                 var userId = new Guid("9e4c221f-01e4-4be1-ae00-c47579e31348");
@@ -108,7 +107,7 @@ namespace PlanthorWebApiServer.Controllers
         public ActionResult<ICollection<Goal>> GetMyGoals()
         {
 
-             try
+            try
             {
                 //TODO: get userId from FE
                 var userId = new Guid("9e4c221f-01e4-4be1-ae00-c47579e31348");

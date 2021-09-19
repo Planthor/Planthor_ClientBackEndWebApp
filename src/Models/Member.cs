@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PlanthorWebApiServer.Datamodel
+namespace PlanthorWebApiServer.Models
 {
     public class Member : BaseEntity
     {

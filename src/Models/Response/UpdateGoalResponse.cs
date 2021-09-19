@@ -1,6 +1,6 @@
 using System;
 
-namespace src.Datamodel.ResponseModel
+namespace PlanthorWebApiServer.Models.ResponseModels
 {
     public class UpdateGoalResponse
     {
@@ -10,6 +10,6 @@ namespace src.Datamodel.ResponseModel
         public float GoalCurrent { get; set; }
         public DateTime GoalDeadline { get; set; }
         public string GoalUnitMeasurement { get; set; }
-        public int GoalPriority { get; set;}
+        public int GoalPriority { get; set; }
     }
 }
