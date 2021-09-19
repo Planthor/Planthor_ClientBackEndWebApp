@@ -1,0 +1,26 @@
+version: '3.9'
+services: 
+    database:
+        image: postgres
+        environment: 
+                - POSTGRES_DB=planthordbtest
+                - POSTGRES_USER=devLocalAccount
+                - POSTGRES_PASSWORD=abc123
+        volumes:
+            - /root/apps/db/:/var/lib/postgresql/data
+        restart: always
+        ports:
+            - 5432:5432
+
+    planthor_be:
+        depends_on: 
+           - database
+        image: akakshuki/planthor_backend
+        build: 
+            context: ./src/
+            dockerfile: ./src/Dockerfile
+        ports: 
+            - "0.0.0.0:8088:80"
+        # volumes: 
+        #    - /root/apps/planthor_app/:/wwwroot/Files/
+        
