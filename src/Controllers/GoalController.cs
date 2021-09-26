@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PlanthorWebApiServer.Context;
@@ -11,6 +12,7 @@ namespace PlanthorWebApiServer.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class GoalController : ControllerBase
     {
         private readonly ILogger<GoalController> _logger;

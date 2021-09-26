@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EDD3BD03-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanthorWebApiServer.Test", "test\PlanthorWebApiServer.Test\PlanthorWebApiServer.Test.csproj", "{A2059B6F-8369-4337-B257-90F1F8452F52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{B50EA30D-6CED-4A25-BBF8-73006488C575}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,18 @@ Global
 		{A2059B6F-8369-4337-B257-90F1F8452F52}.Release|x64.Build.0 = Release|Any CPU
 		{A2059B6F-8369-4337-B257-90F1F8452F52}.Release|x86.ActiveCfg = Release|Any CPU
 		{A2059B6F-8369-4337-B257-90F1F8452F52}.Release|x86.Build.0 = Release|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Debug|x64.Build.0 = Debug|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Debug|x86.Build.0 = Debug|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Release|x64.ActiveCfg = Release|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Release|x64.Build.0 = Release|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Release|x86.ActiveCfg = Release|Any CPU
+		{B50EA30D-6CED-4A25-BBF8-73006488C575}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A2059B6F-8369-4337-B257-90F1F8452F52} = {EDD3BD03-3EEE-4B4B-A875-EC034F3BAF25}
