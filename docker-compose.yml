@@ -18,7 +18,7 @@ services:
         image: akakshuki/planthor_backend
         build: 
             context: ./src/
-            dockerfile: ./src/Dockerfile
+            dockerfile: ./Dockerfile
         ports: 
             - "0.0.0.0:8088:80"
         # volumes: 
