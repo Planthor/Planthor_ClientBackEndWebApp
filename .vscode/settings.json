@@ -1,3 +1,4 @@
 {
-    "editor.defaultFormatter": "ms-dotnettools.csharp"
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "omnisharp.dotnetPath": "/usr/bin/dotnet"
 }

@@ -1,26 +1,37 @@
 version: '3.9'
 services: 
-    database:
+    db:
         image: postgres
         environment: 
-                - POSTGRES_DB=planthordbtest
+                - POSTGRES_DB=planthordbtest, identityserverdb
                 - POSTGRES_USER=devLocalAccount
                 - POSTGRES_PASSWORD=abc123
         volumes:
-            - /root/apps/db/:/var/lib/postgresql/data
+            - ./planthor_db:/var/lib/postgresql/data
         restart: always
         ports:
-            - 5432:5432
+            - 5432:5432  
 
     planthor_be:
         depends_on: 
-           - database
+           - db
         image: akakshuki/planthor_backend
         build: 
             context: ./src/
-            dockerfile: ./src/Dockerfile
+            dockerfile: Dockerfile
         ports: 
             - "0.0.0.0:8088:80"
         # volumes: 
         #    - /root/apps/planthor_app/:/wwwroot/Files/
+        
+    planthor_auth:
+        depends_on:
+            - planthor_be
+            - db
+        image: akakshuki/planthor_identity_server
+        build:
+            context: ./IdentityServer
+            dockerfile: Dockerfile
+        ports:
+          - "0.0.0.0:8085:5000"
         

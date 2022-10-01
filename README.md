@@ -38,15 +38,19 @@ Please carefully read the pre-defined coding standards and naming conventions th
 ```
 dotnet restore
 ```
-- Install Entity Framework Core:
+- Install Entity Framework Core (*This command is supportingh for dotnet version 5):
 ```
-dotnet tool install --global dotnet-ef
+dotnet tool install --global dotnet-ef --version 5.0.5
+```
+
+- If dotnet ef IS NOT available please execuse this command:
+```
+export PATH="$PATH:~/.dotnet/tools"
 ```
 
 ### Database creation
 
-- After restoring the pre-defined packages and installig EF Core successfully, please try to build the project using the following command:
-
+- After restoring the pre-defined packages and installig EF Core successfully, please try to build the project using the following command :
 ```
 dotnet build
 ```
