@@ -20,32 +20,12 @@ Before getting started, make sure you have the following software installed on y
 4. Select the folder that contains your .NET Core project or create a new folder.
 5. A devcontainer.json file will be created in the selected folder. This file contains the configuration settings for your devcontainer.
 6. In the devcontainer.json file, specify the Docker image to be used for the devcontainer. For .NET Core, the image can be set to "mcr.microsoft.com/dotnet/sdk:5.0".
-7. Add the following lines to the "services" section to run PostgreSQL in the devcontainer:
-
-
-``` json
-
-"services": [
-  {
-    "name": "postgres",
-    "image": "postgres:12",
-    "env": {
-      "POSTGRES_USER": "postgres",
-      "POSTGRES_PASSWORD": "postgres",
-      "POSTGRES_DB": "postgres"
-    },
-    "ports": [
-      "5432:5432"
-    ]
-  }
-]
-
-
-```
+7. Add the following lines to the "services" section to run PostgreSQL in the devcontainer
 8. Save the devcontainer.json file and close Visual Studio Code.
 9. Reopen Visual Studio Code and select the folder that contains your project.
 10. Visual Studio Code will now build the devcontainer using the specified Docker image. This may take a few minutes.
 11. Once the devcontainer is built, you will be able to develop and debug your .NET Core code as if you were running it on your local machine. Additionally, you will be able to connect to the PostgreSQL database in the devcontainer.
+12. Final please zip the folder planthor_db and copy to `.devcontainer/file` 
 
 ## Conclusion
 
