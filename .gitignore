@@ -719,4 +719,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+planthor_db
+
 # End of https://www.toptal.com/developers/gitignore/api/csharp,windows,macos,aspnetcore,dotnetcore,vs,vscode
