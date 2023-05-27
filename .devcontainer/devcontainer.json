@@ -1,0 +1,21 @@
+{
+    "name": "Planthor Backed Postgres",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {		
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				
+				"jolhe.csharp-netcore-extensionpack"
+			]
+		}
+	},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [5000, 5001],
+    "remoteUser": "vscode"
+}
